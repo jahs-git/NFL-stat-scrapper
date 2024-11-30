@@ -16,7 +16,7 @@ class Player:
         if self.position == "RB":
             print(f"{self.position}: {self.name}")
             print(f"games played: {self.games_played}")
-            print(f"rushing attemps: {self.rushing_attempt}")
+            print(f"rushing attempts: {self.rushing_attempt}")
             print(f"rushing yards: {self.rush_yards}")
             print(f"rushing touchdowns: {self.rush_td}")
             print(f"receiving targets: {self.rec_targets}")
@@ -30,10 +30,10 @@ class Player:
             print(f"receiving receptions: {self.receptions}")
             print(f"receiving yards: {self.rec_yards}")
             print(f"receiving touchdowns: {self.rec_td}")
-            if self.rushing_attempt > 10:
+            if int(self.rushing_attempt) > 10:
                 print(f"rushing attempts: {self.rushing_attempt}")
                 print(f"rushing yards: {self.rush_yards}")
                 print(f"rushing touchdowns: {self.rush_td}")
 
-            print()
+        print()
 

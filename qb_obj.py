@@ -20,6 +20,7 @@ class QB_Player:
             print(f"attempts: {self.attempts}")
             print(f"touchdowns: {self.touchdowns}")
             print(f"interceptions: {self.interceptions}")
-            print(f"rushing attemps: {self.rushing_attempt}")
+            print(f"rushing attempts: {self.rushing_attempt}")
             print(f"rushing yards: {self.rush_yards}")
             print(f"rushing touchdowns: {self.rush_td}")
+            print()

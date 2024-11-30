@@ -1,4 +1,5 @@
 from qb_obj import QB_Player
+from player_obj import Player
 from bs4 import BeautifulSoup
 import requests 
 
@@ -29,7 +30,19 @@ table = doc.find_all(["tbody"])[4] #the table where the data is located
 trs = table.find_all("tr")
 
 #col 0 = name, col 2 = position, col 3 = games played, col 5 = rush attempts, 
-# col 6 = rush yards, col 7 = rush TD, col 14 = rec tgts, col 15 = rec yards, col 17 = rec TDs
+# col 6 = rush yards, col 7 = rush TD, col 14 = rec tgts, col 15 = receptions, col 16 = rec yards, col 18 = rec TDs
 for row in trs:
     cols = row.find_all("td")
-     
+
+    if (str(cols[2].text.strip()) == "QB"):
+        for player in buffalo_bills_players:
+            if player.name == str(cols[0].text.strip()):
+                player.rushing_attempt = cols[5].text.strip()
+                player.rush_yards = cols[6].text.strip()
+                player.rush_td = cols[7].text.strip()
+    elif (int(cols[15].text.strip()) >= 10 or int(cols[5].text.strip()) > 25):
+        player = Player(cols[0].text.strip(), cols[2].text.strip(), cols[3].text.strip(), cols[5].text.strip(), cols[6].text.strip(), cols[7].text.strip(), cols[14].text.strip(), cols[15].text.strip(), cols[16].text.strip(), cols[18].text.strip())
+        buffalo_bills_players.append(player)
+
+for playa in buffalo_bills_players:
+    playa.print_stats()
