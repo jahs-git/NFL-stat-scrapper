@@ -23,7 +23,6 @@ class Player:
             print(f"receiving receptions: {self.receptions}")
             print(f"receiving yards: {self.rec_yards}")
             print(f"receiving touchdowns: {self.rec_td}")
-            print()
         else:
             print(f"{self.position}: {self.name}")
             print(f"games played: {self.games_played}")
