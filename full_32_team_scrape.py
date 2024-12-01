@@ -14,7 +14,7 @@ teams.append(("NEW ENGLAND PATRIOTS", "https://www.pro-football-reference.com/te
 teams.append(("HOUSTON TEXANS", "https://www.pro-football-reference.com/teams/htx/2024.htm", []))
 teams.append(("INDIANAPOLIS COLTS", "https://www.pro-football-reference.com/teams/clt/2024.htm" ,[]))
 teams.append(("TENNESE TITANS", "https://www.pro-football-reference.com/teams/oti/2024.htm", []))
-teams.append(("JACONSVILLE JAGUARS" , "https://www.pro-football-reference.com/teams/jax/2024.htm", []))
+teams.append(("JACKSONVILLE JAGUARS" , "https://www.pro-football-reference.com/teams/jax/2024.htm", []))
 #AFC NORTH
 teams.append(("PITTSBURG STEELERS", "https://www.pro-football-reference.com/teams/pit/2024.htm", []))
 teams.append(("BALTIMORE RAVENS", "https://www.pro-football-reference.com/teams/rav/2024.htm", []))
@@ -43,7 +43,7 @@ teams.append(("CHICAGO BEARS", "https://www.pro-football-reference.com/teams/chi
 #NFC WEST
 teams.append(("ARIZONA CARDINALS", "https://www.pro-football-reference.com/teams/crd/2024.htm", []))
 teams.append(("SEATTLE SEAHAWKS", "https://www.pro-football-reference.com/teams/sea/2024.htm", []))
-teams.append(("LOS ANGELES RAMs", "https://www.pro-football-reference.com/teams/ram/2024.htm", []))
+teams.append(("LOS ANGELES RAMS", "https://www.pro-football-reference.com/teams/ram/2024.htm", []))
 teams.append(("SAN FRANCISCO 49ers", "https://www.pro-football-reference.com/teams/sfo/2024.htm", []))
 
 for team in teams:
@@ -78,6 +78,7 @@ for team in teams:
                     player.rushing_attempt = cols[5].text.strip()
                     player.rush_yards = cols[6].text.strip()
                     player.rush_td = cols[7].text.strip()
+                    break
         elif (int(cols[15].text.strip()) >= 10 or int(cols[5].text.strip()) > 25):
             player = Player(cols[0].text.strip(), cols[2].text.strip(), cols[3].text.strip(), cols[5].text.strip(), cols[6].text.strip(), cols[7].text.strip(), cols[14].text.strip(), cols[15].text.strip(), cols[16].text.strip(), cols[18].text.strip()) 
             team[2].append(player)
