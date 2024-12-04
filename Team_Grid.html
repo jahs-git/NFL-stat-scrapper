@@ -9,16 +9,12 @@
         html, body {
             margin: 0;
             padding: 0;
-            font: 14px / 1.25 "Helvetica Neue", helvetica, arial, sans-serif;
-            color: #000;
-            background: #c9cbcd;
+            font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+            color: #333;
+            background: #f5f5f5;
         }
 
-        body {
-            position: relative;
-        }
-
-        /* Styling the main container */
+        /* Main container */
         .content_grid {
             display: flex;
             justify-content: center;
@@ -32,45 +28,43 @@
             background: #fff;
             width: 100%;
             max-width: 800px;
-            margin: 20px 0;
+            margin: 20px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
         }
 
         th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
+            border: 1px solid #ddd;
         }
 
         th {
-            background-color: #f4f4f4;
+            background-color: #0073e6;
+            color: #fff;
             font-weight: bold;
+            text-transform: uppercase;
         }
 
-        /* Division headers */
-        .division {
-            background-color: #eaeaea;
-            font-weight: bold;
-            text-align: left;
-            padding-left: 10px;
-            font-size: 1.1em;
-        }
-
-        /* Team highlight styling */
-        .highlight {
+        td.highlight {
             font-weight: bold;
             color: #0073e6;
         }
 
-        /* Add spacing between rows */
-        .flexindex > div > div {
-            margin-bottom: 10px;
+        /* Division header row */
+        tr .division {
+            background-color: #f4f4f4;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 1.1em;
+            border: none;
         }
 
-        /* Selection styling */
-        ::selection {
-            background: #ff0;
-            text-shadow: none;
+        /* Hover effect */
+        tr:hover {
+            background-color: #f9f9f9;
         }
     </style>
 </head>
@@ -79,68 +73,26 @@
         <table>
             <thead>
                 <tr>
-                    <th>Tm</th>
-                    <th>W</th>
-                    <th>L</th>
-                    <th>W-L%</th>
+                    <th>Team</th>
+                    <th>Wins</th>
+                    <th>Losses</th>
+                    <th>Win-Loss %</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- AFC East -->
-                <tr><td colspan="4" class="division">AFC East</td></tr>
-                <tr><td class="highlight">BUF</td><td>9</td><td>2</td><td>.818</td></tr>
-                <tr><td>MIA</td><td>5</td><td>7</td><td>.417</td></tr>
-                <tr><td>NYJ</td><td>3</td><td>8</td><td>.273</td></tr>
-                <tr><td>NWE</td><td>3</td><td>9</td><td>.250</td></tr>
-
-                <!-- AFC North -->
-                <tr><td colspan="4" class="division">AFC North</td></tr>
-                <tr><td class="highlight">PIT*</td><td>8</td><td>3</td><td>.727</td></tr>
-                <tr><td>BAL</td><td>8</td><td>4</td><td>.667</td></tr>
-                <tr><td>CIN</td><td>4</td><td>7</td><td>.364</td></tr>
-                <tr><td>CLE</td><td>3</td><td>8</td><td>.273</td></tr>
-
-                <!-- AFC South -->
-                <tr><td colspan="4" class="division">AFC South</td></tr>
-                <tr><td class="highlight">HOU</td><td>7</td><td>5</td><td>.583</td></tr>
-                <tr><td>IND</td><td>5</td><td>7</td><td>.417</td></tr>
-                <tr><td>TEN</td><td>4</td><td>7</td><td>.364</td></tr>
-                <tr><td>JAX</td><td>2</td><td>9</td><td>.182</td></tr>
-
-                <!-- AFC West -->
-                <tr><td colspan="4" class="division">AFC West</td></tr>
-                <tr><td class="highlight">KAN</td><td>9</td><td>2</td><td>.818</td></tr>
-                <tr><td>LAC</td><td>7</td><td>4</td><td>.636</td></tr>
-                <tr><td>DEN</td><td>4</td><td>7</td><td>.364</td></tr>
-                <tr><td>LVR</td><td>2</td><td>10</td><td>.167</td></tr>
-
-                <!-- NFC East -->
-                <tr><td colspan="4" class="division">NFC East</td></tr>
-                <tr><td class="highlight">PHI</td><td>9</td><td>2</td><td>.818</td></tr>
-                <tr><td>WAS</td><td>7</td><td>5</td><td>.583</td></tr>
-                <tr><td>DAL</td><td>5</td><td>7</td><td>.417</td></tr>
-                <tr><td>NYG</td><td>2</td><td>10</td><td>.167</td></tr>
-
-                <!-- NFC North -->
-                <tr><td colspan="4" class="division">NFC North</td></tr>
-                <tr><td class="highlight">DET</td><td>11</td><td>1</td><td>.917</td></tr>
-                <tr><td>MIN</td><td>9</td><td>2</td><td>.818</td></tr>
-                <tr><td>GNB</td><td>6</td><td>2</td><td>.750</td></tr>
-                <tr><td>CHI</td><td>4</td><td>8</td><td>.333</td></tr>
-
-                <!-- NFC South -->
-                <tr><td colspan="4" class="division">NFC South</td></tr>
-                <tr><td class="highlight">ATL</td><td>6</td><td>5</td><td>.545</td></tr>
-                <tr><td>TAM</td><td>5</td><td>6</td><td>.454</td></tr>
-                <tr><td>NOR</td><td>4</td><td>7</td><td>.364</td></tr>
-                <tr><td>CAR</td><td>3</td><td>8</td><td>.273</td></tr>
-
-                <!-- NFC West -->
-                <tr><td colspan="4" class="division">NFC West</td></tr>
-                <tr><td class="highlight">SEA</td><td>6</td><td>5</td><td>.545</td></tr>
-                <tr><td>ARI</td><td>5</td><td>6</td><td>.454</td></tr>
-                <tr><td>LAR</td><td>4</td><td>7</td><td>.364</td></tr>
-                <tr><td>SFO</td><td>5</td><td>6</td><td>.455</td></tr>
+                {% for division, teams in nfl_standings.items() %}
+                <tr>
+                    <td colspan="4" class="division">{{ division }}</td>
+                </tr>
+                {% for team in teams %}
+                <tr>
+                    <td class="{% if loop.first %}highlight{% endif %}">{{ team.Tm }}</td>
+                    <td>{{ team.W }}</td>
+                    <td>{{ team.L }}</td>
+                    <td>{{ team['W-L%'] }}</td>
+                </tr>
+                {% endfor %}
+                {% endfor %}
             </tbody>
         </table>
     </div>
